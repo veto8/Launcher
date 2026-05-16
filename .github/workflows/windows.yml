@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   Build:
-    if: github.repository_owner == 'myridia'
+    if: github.repository_owner == 'myridiax'
     runs-on: windows-latest
     steps:
       - name: MSBuild
