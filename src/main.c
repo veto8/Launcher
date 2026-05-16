@@ -3,11 +3,13 @@
 #include <string.h>
 #ifdef _WIN32
 #include <windows.h>
-#elif defined(__APPLE__)
-#include <mach-o/dyld.h>
 #else
-#include <limits.h>
-#include <unistd.h>
+#else
+    #include <unistd.h>
+    #include <limits.h>
+    #ifdef __APPLE__
+        #include <mach-o/dyld.h>
+    #endif
 #endif
 static char *exe_dir(void) {
 #ifdef _WIN32
