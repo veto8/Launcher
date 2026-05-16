@@ -4,7 +4,6 @@
 #ifdef _WIN32
 #include <windows.h>
 #else
-#else
     #include <unistd.h>
     #include <limits.h>
     #ifdef __APPLE__
