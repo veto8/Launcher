@@ -53,7 +53,7 @@ int main(void) {
   printf("%s\n", dir);
   char *dir2 = "C:/tamuz/applic/"; 
   char arg[4096];
-  snprintf(arg, sizeof(arg), "/[MAGIC_LOGICAL_NAMES]ROOT=%s", dir2);
+  snprintf(arg, sizeof(arg), "/[MAGIC_LOGICAL_NAMES]ROOT=%s/", dir);
   printf("%s\n", arg);
 
   //char *args[] = {"helloc_linux", arg, NULL};
