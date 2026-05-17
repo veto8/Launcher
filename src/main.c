@@ -54,6 +54,8 @@ int main(void) {
 
   char arg[4096];
   snprintf(arg, sizeof(arg), "/[MAGIC_LOGICAL_NAMES]ROOT=%s", dir);
+  printf("%s\n", arg);
+
   //char *args[] = {"helloc_linux", arg, NULL};
   //execv("helloc_linux", args);
   char *args[] = {"uniRTE.exe", arg, NULL};
