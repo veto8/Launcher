@@ -56,10 +56,9 @@ int main(void) {
   snprintf(arg, sizeof(arg), "/[MAGIC_LOGICAL_NAMES]ROOT=%s", dir);
   //char *args[] = {"helloc_linux", arg, NULL};
   //execv("helloc_linux", args);
-
   char *args[] = {"uniRTE.exe", arg, NULL};
   execv("uniRTE.exe", args);
-  //wine C:/tamuz/applic/uniRTE.exe 
+    
   perror("execv");
   free(dir);
   return 1;
