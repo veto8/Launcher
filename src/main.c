@@ -57,8 +57,8 @@ int main(void) {
   //char *args[] = {"helloc_linux", arg, NULL};
   //execv("helloc_linux", args);
 
-  char *args[] = {"uniRTE", arg, NULL};
-  execv("uniRTE", args);
+  char *args[] = {"uniRTE.exe", arg, NULL};
+  execv("uniRTE.exe", args);
   //wine C:/tamuz/applic/uniRTE.exe 
   perror("execv");
   free(dir);
