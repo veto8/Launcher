@@ -17,7 +17,7 @@ static char *exe_dir(void) {
   DWORD len = GetModuleFileNameA(NULL, path, MAX_PATH);
   if (len == 0)
     return NULL;
-  char *sep = strrchr(path, '\\');
+  char *sep = strrchr(path, '/');
   if (sep)
     *sep = '\0';
   return strdup(path);
@@ -54,7 +54,7 @@ int main(void) {
   printf("%s\n", dir);
   char *dir2 = "C:/tamuz/applic/"; 
   char arg[4096];
-  snprintf(arg, sizeof(arg), "/[MAGIC_LOGICAL_NAMES]ROOT=%s\\", dir);
+  snprintf(arg, sizeof(arg), "/[MAGIC_LOGICAL_NAMES]ROOT=%s/", dir);
   printf("%s\n", arg);
 
   //char *args[] = {"helloc_linux", arg, NULL};
