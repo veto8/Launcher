@@ -40,7 +40,9 @@ jobs:
         run: |
           cmake -S . -B build -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
           cmake --build build
-          cp build\Release\launcher.exe 
+          dir build 
+          dir build/Release 
+          cp build\Release\launcher.exe  launcher.exe
         
 
       - name: Release
