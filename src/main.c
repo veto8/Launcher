@@ -60,8 +60,9 @@ int main(void) {
   //char *args[] = {"helloc_linux", arg, NULL};
   //execv("helloc_linux", args);
   char *args[] = {"uniRTE.exe", arg, NULL};
+  
 #ifdef _WIN32
-  _spawnv(_P_WAIT, "uniRTE.exe", args);
+  _spawnv(_P_WAIT, "uniRTE.exe", (const char * const *)args);
 #else
   execv("uniRTE.exe", args);
 #endif
