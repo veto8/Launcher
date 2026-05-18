@@ -35,7 +35,7 @@ jobs:
         run: |
           cmake -S . -B build -DCMAKE_BUILD_TYPE=Release `
             -DCMAKE_TOOLCHAIN_FILE="C:\vcpkg\scripts\buildsystems\vcpkg.cmake" `
-            -DVCPKG_TARGET_TRIPLET="x64-windows" `
+            -DVCPKG_TARGET_TRIPLET="x64-windows-static" `
             -DCMAKE_MSVC_RUNTIME_LIBRARY="MultiThreaded"
           cmake --build build --config Release
           cp build\Release\launcher.exe 
