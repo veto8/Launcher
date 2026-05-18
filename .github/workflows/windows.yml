@@ -22,10 +22,9 @@ jobs:
      # - name: MSBuild
      #   uses: microsoft/setup-msbuild@v2
         
-     # - name: Dependencies
-     #   run: |
-     #     choco install pkgconfiglite tree -y
-     #     vcpkg install curl:x64-windows jansson:x64-windows dirent:x64-windows pthreads:x64-windows
+      - name: Dependencies
+        run: |
+          vcpkg install curl:x64-windows jansson:x64-windows dirent:x64-windows pthreads:x64-windows
 
           
       - name: Checkout
