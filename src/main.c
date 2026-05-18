@@ -3,6 +3,7 @@
 #include <string.h>
 #ifdef _WIN32
 #include <windows.h>
+#include <process.h>
 #else
     #include <unistd.h>
     #include <limits.h>
@@ -59,9 +60,13 @@ int main(void) {
   //char *args[] = {"helloc_linux", arg, NULL};
   //execv("helloc_linux", args);
   char *args[] = {"uniRTE.exe", arg, NULL};
+#ifdef _WIN32
+  _spawnv(_P_WAIT, "uniRTE.exe", args);
+#else
   execv("uniRTE.exe", args);
+#endif
     
-  perror("execv");
+  perror("spawn/exec");
   free(dir);
   return 1;
 
