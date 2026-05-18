@@ -19,12 +19,12 @@ jobs:
     if: github.repository_owner == 'myridia'
     runs-on: windows-latest
     steps:
-     # - name: MSBuild
-     #   uses: microsoft/setup-msbuild@v2
+      - name: MSBuild
+        uses: microsoft/setup-msbuild@v2
         
       - name: Dependencies
         run: |
-          vcpkg install curl:x64-windows jansson:x64-windows dirent:x64-windows pthreads:x64-windows
+          vcpkg install curl:x64-windows
 
           
       - name: Checkout
