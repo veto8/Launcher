@@ -22,19 +22,16 @@ jobs:
       #- name: MSBuild
       #  uses: microsoft/setup-msbuild@v2
         
-      #- name: Dependencies
-      #  run: |
-      #    vcpkg install curl:x64-windows
+      - name: Dependencies
+        run: |
+          vcpkg install mingw --triplet x64-mingw
           
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Build
         run: |
-          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release `
-            -DCMAKE_TOOLCHAIN_FILE="C:\vcpkg\scripts\buildsystems\vcpkg.cmake" `
-            -DVCPKG_TARGET_TRIPLET="x64-windows-static" `
-            -DCMAKE_MSVC_RUNTIME_LIBRARY="MultiThreadedDLL"
+          cmake -S . -B build -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
           cmake --build build --config Release
           cp build\Release\launcher.exe 
         
