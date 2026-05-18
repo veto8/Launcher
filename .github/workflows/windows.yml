@@ -15,18 +15,24 @@ permissions:
 
 
 jobs:
-  Build:
+  Builder:
     if: github.repository_owner == 'myridia'
     runs-on: windows-latest
     steps:
       #- name: MSBuild
       #  uses: microsoft/setup-msbuild@v2
         
-      - name: Dependencies
-        run: |
-          pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-cmake mingw-w64-x86_64-make
+      # - name: Dependencies
+        # run: |
+          # pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-cmake mingw-w64-x86_64-make
           # vcpkg install mingw 
-          
+
+      - name: MinGW
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: mingw64
+          install: mingw-w64-x86_64-gcc mingw-w64-x86_64-cmake mingw-w64-x86_64-make
+
       - name: Checkout
         uses: actions/checkout@v4
 
