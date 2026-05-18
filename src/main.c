@@ -17,7 +17,7 @@ static char *exe_dir(void) {
   DWORD len = GetModuleFileNameA(NULL, path, MAX_PATH);
   if (len == 0)
     return NULL;
-  char *sep = strrchr(path, '/');
+  char *sep = strrchr(path, '\\');
   if (sep)
     *sep = '\0';
   return strdup(path);
@@ -51,6 +51,11 @@ int main(void) {
     perror("exe_dir");
     return 1;
   }
+
+  for (char *p = dir; *p; p++) {
+    if (*p == '\\') *p = '/';
+  }
+    
   printf("%s\n", dir);
   char *dir2 = "C:/tamuz/applic/"; 
   char arg[4096];
