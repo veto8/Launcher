@@ -19,8 +19,8 @@ jobs:
     if: github.repository_owner == 'myridia'
     runs-on: windows-latest
     steps:
-      - name: MSBuild
-        uses: microsoft/setup-msbuild@v2
+     # - name: MSBuild
+     #   uses: microsoft/setup-msbuild@v2
         
       - name: Dependencies
         run: |
