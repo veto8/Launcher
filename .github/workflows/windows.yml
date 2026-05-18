@@ -24,7 +24,7 @@ jobs:
         
       - name: Dependencies
         run: |
-          vcpkg install mingw --triplet x64-mingw
+          vcpkg install mingw 
           
       - name: Checkout
         uses: actions/checkout@v4
