@@ -4,6 +4,7 @@
 #ifdef _WIN32
 #include <windows.h>
 #include <process.h>
+ShowWindow(GetConsoleWindow(), SW_HIDE);
 #else
     #include <unistd.h>
     #include <limits.h>
