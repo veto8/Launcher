@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #ifdef _WIN32
+#define _WIN32_WINNT 0x0501
 #include <windows.h>
 #include <process.h>
 ShowWindow(GetConsoleWindow(), SW_HIDE);
