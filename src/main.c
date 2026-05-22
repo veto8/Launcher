@@ -47,6 +47,11 @@ static char *exe_dir(void) {
 #endif
 }
 int main(void) {
+  #ifdef _WIN32
+    ShowWindow(GetConsoleWindow(), SW_HIDE);
+  #endif
+
+    
   char *dir = exe_dir();
   if (!dir) {
     perror("exe_dir");
