@@ -48,7 +48,7 @@ static char *exe_dir(void) {
 }
 int main(void) {
   #ifdef _WIN32
-    ShowWindow(GetConsoleWindow(), SW_HIDE);
+   // ShowWindow(GetConsoleWindow(), SW_HIDE);
   #endif
 
     
